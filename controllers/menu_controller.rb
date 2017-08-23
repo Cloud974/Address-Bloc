@@ -82,7 +82,11 @@ class MenuController
     puts 'n - next entry'
     puts 'd - delete entry'
     puts 'e - edit this entry'
+<<<<<<< HEAD
     puts 'm - return to main menu'
+=======
+    puts 'm - retyrn to main menu'
+>>>>>>> 40788450e19edab4438848208b4a7f272edfa9b4
 
     selection = gets.chomp
 
@@ -99,5 +103,8 @@ class MenuController
         entry_submenu(entry)
       end
     end
+<<<<<<< HEAD
 
+=======
+>>>>>>> 40788450e19edab4438848208b4a7f272edfa9b4
 end
