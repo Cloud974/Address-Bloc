@@ -14,6 +14,7 @@ class MenuController
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CSV"
     puts "5 - Exit"
+    puts "0 - Burn it with fire!"
     print "Enter your selection: "
 
     selection = gets.to_i
@@ -38,6 +39,9 @@ class MenuController
       when 5
         puts 'Good-bye!'
         exit(0)
+      when 0
+        system 'clear'
+        burn_with_fire
       else
         system 'clear'
         puts 'Sorry, that is not a valid input'
@@ -179,5 +183,28 @@ class MenuController
       end
   end
 
+  def burn_with_fire
+    puts "Are you sure?"
+    puts "y - yes, this is the only way"
+    puts "n - no, I didn't mean it!"
+    selection = gets.chomp
+
+    case selection
+      when 'y'
+        address_book.entries.clear
+        puts "It has been cleansed. Nothing remains."
+        puts "Press any button to return to the Main menu"
+        gets.chomp
+        system 'clear'
+        main_menu
+      when 'n'
+        system 'clear'
+        main_menu
+      else
+        system 'clear'
+        puts "#{selection} is not a valid input"
+        burn_with_fire
+      end
+    end
 
 end
