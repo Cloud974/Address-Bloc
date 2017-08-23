@@ -107,6 +107,7 @@ class MenuController
   def view_entry_num
     puts 'What entry number do you want to see? '
     selection = gets.chomp.to_i
+    selection = selection -1
     system 'clear'
     if selection < address_book.entries.count
       puts address_book.entries[selection].to_s
